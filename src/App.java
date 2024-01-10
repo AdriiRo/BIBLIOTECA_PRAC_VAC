@@ -44,10 +44,10 @@ public class App {
 
             switch (optionSelector) {
                 case 1:
-                    // Opción 1
+                    b1.anadirLibros(); // Las opciones asignadas aquí no corresponden con las del menú 
                     break;
                 case 2:
-                    // Opción 2
+                    b1.buscarLibrosAutor();
                     break;
                 case 3:
                     // Opción 3

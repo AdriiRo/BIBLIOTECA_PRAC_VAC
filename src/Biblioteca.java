@@ -1,4 +1,7 @@
 public class Biblioteca {
+
+    static int contadorLibros = 0; 
+
     private String nombre; 
     private String direccion; 
     private Libro [] libros; 
@@ -14,9 +17,32 @@ public class Biblioteca {
 
     public void anadirLibros() {
 
+        System.out.println("Introduce el titulo del libro: ");
+        String titulo = EntradaDatos.leerString();
+        System.out.println("Introduce el autor del libro: ");
+        String autor = EntradaDatos.leerString();
+        System.out.println("Introduce el año de publicación del libro: ");
+        int anoPublicacion = EntradaDatos.leerEntero(); 
+        System.out.println("Introduce el ISBN del libro: ");
+        long codigoISBN = EntradaDatos.leerLong();
+        System.out.println("Introduce el número de ejemplares del libro: ");
+        int numEjemplares = EntradaDatos.leerEntero();
+                
+        Libro l = new Libro(titulo, autor, anoPublicacion, codigoISBN, numEjemplares);
+        libros[contadorLibros] = l; 
+        contadorLibros++; 
     }
 
     public void buscarLibrosAutor() {
+
+        System.out.println("Introduce el autor del libro a buscar: ");
+        String autorInput = EntradaDatos.leerString(); 
+
+        for (int i = 0; i < libros.length; i++) {
+            if(autorInput.equals(libros[i].getAutor())) {
+                System.out.println("Resultado de la búsqueda: \n" + libros[i].getTitulo() + libros[i].getAutor());
+            }
+        }
 
     }
 

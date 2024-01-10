@@ -24,5 +24,12 @@ public class EntradaDatos { // Es una clase que nos permite gestionar la entrada
         return input;
     }
 
+    public static long leerLong() {
+        long input = 0; 
+        Scanner sc = new Scanner(System.in); 
+        input = sc.nextLong();
+        return input; 
+    }
+
 
 }
