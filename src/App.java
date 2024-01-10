@@ -3,6 +3,7 @@ import java.util.NoSuchElementException;
 public class App {
     public static void main(String[] args) throws Exception {
 
+        GestorBiblioteca gBiblioteca = new GestorBiblioteca();
         Biblioteca[] bibliotecas = new Biblioteca[2];
 
         Libro[] librosB1 = new Libro[10];
@@ -43,17 +44,13 @@ public class App {
             }
 
             switch (optionSelector) {
-                case 1:
-                    b1.anadirLibros(); // Las opciones asignadas aquí no corresponden con las del menú 
+                case 1: gBiblioteca.sacarLibro(librosB2);
                     break;
-                case 2:
-                    b1.buscarLibrosAutor();
+                case 2: gBiblioteca.devolverLibro();
                     break;
-                case 3:
-                    // Opción 3
+                case 3: b1.anadirLibros(); // Las opciones asignadas aquí no corresponden con las del menú 
                     break;
-                case 4:
-                    // Opción 4
+                case 4: gBiblioteca.eliminarLibro();
                     break;
                 case 5:
                     // Opción 5
