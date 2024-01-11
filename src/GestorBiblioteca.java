@@ -19,7 +19,7 @@ public class GestorBiblioteca {
                     } else {
                         System.out.println("No hay más libros disponibles");
                     }
-
+                    break;
                 } else {
                     System.out.println("El libro que has seleccionado no existe o no está disponible");
                 }
