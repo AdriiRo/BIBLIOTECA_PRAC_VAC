@@ -25,7 +25,7 @@ public class App {
         // Libros pre-cargados
 
         Libro libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez", 1967, 9780307474728L, 2);
-        Libro libro2 = new Libro("El Principito", "Antoine de Saint-Exupéry", 1943, 9780156013925L, 3);
+        Libro libro2 = new Libro("El Principito", "Antoine de Saint-Exupéry", 1943, 1111, 3);
         Libro libro3 = new Libro("Harry Potter y la piedra filosofal", "J.K. Rowling", 1997, 9788478884455L, 4);
         Libro libro4 = new Libro("1984", "George Orwell", 1949, 9788423342477L, 2);
         Libro libro5 = new Libro("El código Da Vinci", "Dan Brown", 2003, 9788495618600L, 5);
@@ -74,13 +74,13 @@ public class App {
                         gBiblioteca.sacarLibro(librosB1);
                         break;
                     case 2:
-                        gBiblioteca.devolverLibro();
+                        gBiblioteca.devolverLibro(librosB1);
                         break;
                     case 3:
                         b1.anadirLibros();
                         break;
                     case 4:
-                        gBiblioteca.eliminarLibro();
+                        gBiblioteca.eliminarLibro(librosB1);
                         break;
                     case 5:
                         b1.consultarEjemplares();
@@ -119,13 +119,13 @@ public class App {
                         gBiblioteca.sacarLibro(librosB2);
                         break;
                     case 2:
-                        gBiblioteca.devolverLibro();
+                        gBiblioteca.devolverLibro(librosB2);
                         break;
                     case 3:
                         b1.anadirLibros();
                         break;
                     case 4:
-                        gBiblioteca.eliminarLibro();
+                        gBiblioteca.eliminarLibro(librosB2);
                         break;
                     case 5:
                         b2.consultarEjemplares();
