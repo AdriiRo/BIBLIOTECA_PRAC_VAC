@@ -6,13 +6,12 @@ public class Biblioteca {
     private String direccion;
     private Libro[] libros;
 
-    public Biblioteca(String nombre, String direccion, Libro[] libros) {
+    public Biblioteca(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.libros = libros;
     }
 
-    public void anadirLibros() {
+    public void anadirLibros(Libro [] libros) {
 
         System.out.println("Introduce el titulo del libro: ");
         String titulo = EntradaDatos.leerString();
@@ -28,6 +27,23 @@ public class Biblioteca {
         Libro l = new Libro(titulo, autor, anoPublicacion, codigoISBN, numEjemplares);
         libros[contadorLibros] = l;
         contadorLibros++;
+
+        // Corección creación array aux si el array por defecto se llena 
+
+        // try {
+        //     libros[contadorLibros] = l; 
+        // } catch (ArrayIndexOutOfBoundsException e) {    // Posible error. Comprobar el funcionamiento. 
+
+        //     System.out.println("Has llenado la capacidad del array. Generando una posición adicional... ");
+
+        //     Libro [] arrayAux = new Libro[libros.length + 1];
+
+        //     System.arraycopy(libros, 0, arrayAux, 0, arrayAux.length);
+
+        //     libros = arrayAux; 
+
+
+        // }
     }
 
     public void buscarLibrosAutor() {
@@ -58,7 +74,7 @@ public class Biblioteca {
 
     }
 
-    public void modificarEjemplares() {
+    public void modificarEjemplares(Libro [] libros) {
 
         System.out.println("Introduzca el ISBN del libro del cual desea modificar los ejemplares: ");
         int inputISBN = EntradaDatos.leerEntero();
@@ -78,12 +94,18 @@ public class Biblioteca {
         }
     }
 
-    public void consultarEjemplares() { // Usar en el main un if que pregunte por el nombre de la biblioteca a
-                                        // consultar, poniendo en una condición b1.consultarEjemplares() y en la otra
-                                        // b2.consultarEjemplares()
-        System.out.println("En la biblioteca seleccionada hay " + libros.length + " libros."); // Verificar que las
-                                                                                               // posiciones no tengan
-                                                                                               // null por valor.
+    public void consultarEjemplares(Libro [] libros) { // No actualiza al añadir un nuevo libro durante la ejecución, REVISAR
+
+        int contadorLibros = 0; 
+
+        for (int i = 0; i < libros.length; i++) {
+            if (libros[i] != null) {
+                contadorLibros++;
+            }
+        }
+
+        System.out.println("En la biblioteca seleccionada hay " + contadorLibros + " libros");
+
     }
 
     public String getNombre() {

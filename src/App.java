@@ -16,8 +16,8 @@ public class App {
 
         // Bibliotecas
 
-        Biblioteca b1 = new Biblioteca("Isaac Albeniz", "Avenida de las Lagunas s/n", librosB1);
-        Biblioteca b2 = new Biblioteca("Gloria Fuertes", "Calle Isabel II s/n", librosB2);
+        Biblioteca b1 = new Biblioteca("Isaac Albeniz", "Avenida de las Lagunas s/n");
+        Biblioteca b2 = new Biblioteca("Gloria Fuertes", "Calle Isabel II s/n");
 
         bibliotecas[0] = b1;
         bibliotecas[1] = b2;
@@ -60,7 +60,7 @@ public class App {
 
             do {
                 System.out.println(
-                        "GESTOR DE BIBLIOTECAS \n [1]. Sacar un libro de una biblioteca \n [2]. Devolver un libro de una biblioteca \n [3]. Introducir libro nuevo en una biblioteca \n [4]. Eliminar un libro de una biblioteca \n [5]. Consultar número de libros de una biblioteca");
+                        "GESTOR DE BIBLIOTECAS \n [1]. Sacar un libro de una biblioteca \n [2]. Devolver un libro de una biblioteca \n [3]. Introducir libro nuevo en una biblioteca \n [4]. Eliminar un libro de una biblioteca \n [5]. Consultar número de libros de una biblioteca \n [6]. Modificar ejemplares de un libro");
 
                 try {
                     optionSelector = EntradaDatos.leerEntero();
@@ -77,15 +77,15 @@ public class App {
                         gBiblioteca.devolverLibro(librosB1);
                         break;
                     case 3:
-                        b1.anadirLibros();
+                        b1.anadirLibros(librosB1);
                         break;
                     case 4:
                         gBiblioteca.eliminarLibro(librosB1);
                         break;
                     case 5:
-                        b1.consultarEjemplares();
+                        b1.consultarEjemplares(librosB1);
                         break;
-                    case 6:
+                    case 6: b1.modificarEjemplares(librosB1);
                         break;
                     default:
                         System.out.println("Opción seleccionada no válida");
@@ -105,7 +105,7 @@ public class App {
 
             do {
                 System.out.println(
-                        "GESTOR DE BIBLIOTECAS \n [1]. Sacar un libro de una biblioteca \n [2]. Devolver un libro de una biblioteca \n [3]. Introducir libro nuevo en una biblioteca \n [4]. Eliminar un libro de una biblioteca \n [5]. Consultar número de libros de una biblioteca");
+                        "GESTOR DE BIBLIOTECAS \n [1]. Sacar un libro de una biblioteca \n [2]. Devolver un libro de una biblioteca \n [3]. Introducir libro nuevo en una biblioteca \n [4]. Eliminar un libro de una biblioteca \n [5]. Consultar número de libros de una biblioteca \n [6]. Modificar ejemplares de un libro");
 
                 try {
                     optionSelector = EntradaDatos.leerEntero();
@@ -122,15 +122,15 @@ public class App {
                         gBiblioteca.devolverLibro(librosB2);
                         break;
                     case 3:
-                        b1.anadirLibros();
+                        b2.anadirLibros(librosB2);
                         break;
                     case 4:
                         gBiblioteca.eliminarLibro(librosB2);
                         break;
                     case 5:
-                        b2.consultarEjemplares();
+                        b2.consultarEjemplares(librosB2);
                         break;
-                    case 6:
+                    case 6: b2.modificarEjemplares(librosB2);
                         break;
                     default:
                         System.out.println("Opción seleccionada no válida");
