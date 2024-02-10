@@ -78,12 +78,16 @@ public class App {
                         break;
                     case 3:
                         b1.anadirLibros(librosB1);
-                        break;
                     case 4:
                         gBiblioteca.eliminarLibro(librosB1);
                         break;
                     case 5:
                         b1.consultarEjemplares(librosB1);
+                        
+                        for (int i = 0; i < librosB1.length; i++) {
+                            if(librosB1[i]!=null)
+                            System.out.println(librosB1[i].getTitulo());
+                        }
                         break;
                     case 6: b1.modificarEjemplares(librosB1);
                         break;

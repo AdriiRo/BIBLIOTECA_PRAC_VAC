@@ -11,7 +11,7 @@ public class Biblioteca {
         this.direccion = direccion;
     }
 
-    public void anadirLibros(Libro [] libros) {
+    public void anadirLibros(Libro [] misLibros) {
 
         System.out.println("Introduce el titulo del libro: ");
         String titulo = EntradaDatos.leerString();
@@ -24,8 +24,8 @@ public class Biblioteca {
         System.out.println("Introduce el número de ejemplares del libro: ");
         int numEjemplares = EntradaDatos.leerEntero();
 
-        Libro l = new Libro(titulo, autor, anoPublicacion, codigoISBN, numEjemplares);
-        libros[contadorLibros] = l;
+        Libro libro = new Libro(titulo, autor, anoPublicacion, codigoISBN, numEjemplares);
+        misLibros[contadorLibros] = libro;
         contadorLibros++;
 
         // Corección creación array aux si el array por defecto se llena 
